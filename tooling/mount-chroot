@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo mount --bind /dev $HOME/build/squashfs-root/dev
+sudo mount --bind /run $HOME/build/squashfs-root/run
+sudo chroot $HOME/build/squashfs-root
+

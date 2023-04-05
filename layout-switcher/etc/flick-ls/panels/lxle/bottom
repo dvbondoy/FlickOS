@@ -1,0 +1,35 @@
+# lxpanel <profile> config file. Manually editing is not recommended.
+# Use preference dialog in lxpanel to adjust config when you can.
+
+Global {
+  edge=bottom
+  monitor=0
+  height=26
+  transparent=1
+  background=0
+  tintcolor=#242424
+  alpha=203
+}
+Plugin {
+  type=launchtaskbar
+  Config {
+  }
+}
+Plugin {
+  type=pager
+  Config {
+  }
+}
+Plugin {
+  type=wincmd
+  Config {
+  }
+}
+Plugin {
+  type=launchbar
+  Config {
+    Button {
+      id=panelxpose.desktop
+    }
+  }
+}

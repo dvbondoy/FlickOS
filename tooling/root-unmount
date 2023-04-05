@@ -1,0 +1,10 @@
+#!/bin/bash
+# Perform these action inside chroot
+apt-get clean
+rm -rf /tmp/* ~/.bash_history
+umount /proc
+umount /sys
+umount /dev/pts
+export HISTSIZE=0
+exit
+

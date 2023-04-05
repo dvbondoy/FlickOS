@@ -1,0 +1,176 @@
+# lxpanel <profile> config file. Manually editing is not recommended.
+# Use preference dialog in lxpanel to adjust config when you can.
+
+Global {
+  edge=bottom
+  allign=left
+  margin=0
+  widthtype=percent
+  width=100
+  height=36
+  transparent=1
+  tintcolor=#242424
+  alpha=200
+  autohide=0
+  heightwhenhidden=2
+  setdocktype=1
+  setpartialstrut=1
+  usefontcolor=1
+  fontsize=10
+  fontcolor=#f3f3f3
+  usefontsize=0
+  background=0
+  backgroundfile=/usr/share/lxpanel/images/lubuntu-background.png
+  iconsize=24
+  loglevel=2
+  monitor=-1
+  align=left
+}
+Plugin {
+  type=space
+  Config {
+    Size=2
+  }
+}
+Plugin {
+  type=menu
+  Config {
+    image=/usr/share/icons/ubuntu.png
+    system {
+    }
+    separator {
+    }
+    item {
+      name=Run
+      image=system-run
+      action=gexec
+    }
+    item {
+      name=Search
+      image=search
+      action=mate-search-tool
+    }
+    item {
+      name=Shutdown
+      image=system-shutdown
+      action=/usr/bin/lxsession-logout --banner "/usr/share/lxde/images/logout.png" --side=left
+    }
+  }
+}
+Plugin {
+  type=space
+  expand=0
+  Config {
+    Size=6
+  }
+}
+Plugin {
+  type=separator
+  Config {
+  }
+}
+Plugin {
+  type=launchbar
+  Config {
+    Button {
+      id=firefox.desktop
+    }
+    Button {
+      id=pcmanfm.desktop
+    }
+  }
+}
+Plugin {
+  type=taskbar
+  Config {
+    ShowAllDesks=0
+    FlatButton=0
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=6
+  }
+}
+Plugin {
+  type=dclock
+  Config {
+    ClockFmt=%l:%M:%S %p
+    TooltipFmt=%A %B %e, %Y
+    Action=time-admin
+    BoldFont=1
+    IconOnly=0
+    CenterText=1
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=6
+  }
+}
+Plugin {
+  type=launchbar
+  Config {
+    Button {
+      id=weather.desktop
+    }
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=6
+  }
+}
+Plugin {
+  type=separator
+  Config {
+  }
+}
+Plugin {
+  type=tray
+  Config {
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=6
+  }
+}
+Plugin {
+  type=volumealsa
+  Config {
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=6
+  }
+}
+Plugin {
+  type=batt
+  Config {
+    BackgroundColor=#212121
+    ChargingColor1=#f3f3f3
+    ChargingColor2=#f3f3f3
+    DischargingColor1=#bebebe
+    DischargingColor2=#bebebe
+    HideIfNoBattery=1
+    AlarmCommand=xmessage Battery low
+    AlarmTime=5
+    BorderWidth=2
+    Size=6
+    ShowExtendedInformation=0
+    BatteryNumber=0
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=1
+  }
+}

@@ -1,0 +1,71 @@
+#!/bin/bash
+#Purpose:Provide a list of desktop layout for LXDE
+#Author:dvbondoy@gmail.com
+#Tested on:Ubuntu 20.04
+
+#restart panel and openbox
+restart_wm(){ lxpanelctl restart && openbox --restart; }
+
+#remove plank from autostart
+no_autostart_plank(){ sed -i '/plank/d' ~/.config/lxsession/LXDE/autostart; }
+
+#delete contents of panels folder
+clear_panel(){ rm ~/.config/lxpanel/LXDE/panels/*; }
+
+#apply classic layout
+clas(){
+	clear_panel
+	pkill plank
+	no_autostart_plank
+
+	#copy panel
+	cp /etc/flick-ls/panels/classic/panel ~/.config/lxpanel/LXDE/panels/
+
+	restart_wm
+}
+
+#apply elementary layout
+elem(){
+	clear_panel
+	no_autostart_plank
+
+	#add plank to autostart
+	echo "plank" >> ~/.config/lxsession/LXDE/autostart
+
+	#run plank for this session
+	plank &
+
+	#copy panel
+	cp /etc/flick-ls/panels/elementary/panel ~/.config/lxpanel/LXDE/panels/
+
+	restart_wm
+}
+
+#apply lxle layout
+lxle(){
+	clear_panel
+	pkill plank
+	no_autostart_plank
+	
+	cp /etc/flick-ls/panels/lxle/* ~/.config/lxpanel/LXDE/panels/
+	restart_wm
+	#zenity --info --title="LXLE is no yet available" --text="LXLE layout not yet available."
+	
+}
+
+#create dialog window and put to variable
+choice=$(zenity --list --title="Layout Switcher" --hide-header --text="Select and press OK" --radiolist --column="list" --column="Layout" --column="Description" \
+classic Classic "Windows like layout" \
+elementary Elementary "Mac OS like layout" \
+lxle LXLE "Linux layout")
+
+echo "$choice"
+
+if [ $choice == "Classic" ]; then
+	clas
+elif [ $choice == "Elementary" ]; then
+	elem
+elif [ $choice == "LXLE" ]; then
+	lxle
+fi
+

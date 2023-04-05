@@ -1,0 +1,5 @@
+#!/bin/bash
+# Unmount
+sudo umount $HOME/lxle/squashfs-root/dev
+sudo umount $HOME/lxle/squashfs-root/run
+

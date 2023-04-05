@@ -1,0 +1,8 @@
+Package:fls
+Version:1.0
+Depends: plank
+Section:utils
+Priority:optional
+Architecture:all
+Maintainer: DioscoroIII <dvbondoy@gmail.com>
+Description: Desktop layout switcher for LXDE desktop

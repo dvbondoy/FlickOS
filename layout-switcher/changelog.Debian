@@ -1,0 +1,17 @@
+test (1.0-2) stable; urgency=low
+
+  [ Baeldung ]
+  * Changes to installer 
+
+ -- Baeldung <test@test.com>  Thu,  23 Dec 2021 11:30:00 +0100 
+
+test (1.0-1) stable; urgency=low
+
+  [ Baeldung ]
+  * Wonderful program to print the name ;)
+
+ -- Baeldung <test@test.com>  Thu,  23 Dec 2021 11:00:00 +0100 
+bluelake@pacific:~/Documents/deb/build$ gzip --best -n changelog.Debian 
+bluelake@pacific:~/Documents/deb/build$ mkdir -p test/usr/share/doc/test
+bluelake@pacific:~/Documents/deb/build$ cp changelog.Debian.gz test/usr/share/doc/test/
+

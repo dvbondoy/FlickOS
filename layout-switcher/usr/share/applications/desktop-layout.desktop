@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Icon=user-desktop
+Name=Change Desktop Layout
+Comment=Change desktop layout
+Categories=Settings;GTK;DesktopSettings;X-LXDE-Settings;
+Exec=/usr/bin/layout-switcher
+StartupNotify=true
+Terminal=false
+NotShowIn=GNOME;XFCE;KDE;MATE;
